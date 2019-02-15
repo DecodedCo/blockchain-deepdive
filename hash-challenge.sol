@@ -1,4 +1,4 @@
-pragma solidity ^0.4.22;
+pragma solidity ^0.5.1;
 
 
 contract helloWorld {
@@ -9,10 +9,9 @@ contract helloWorld {
 
  }
 
-  function hashWord (string _string) public pure returns(bytes32){
-
-    return keccak256(abi.encodePacked(_string));
-
+  function hashWord (string memory _value) public pure returns(bytes32 data){
+    data = keccak256(abi.encodePacked( _value));
+    return data;
  }
 
 }
